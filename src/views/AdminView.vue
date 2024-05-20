@@ -56,15 +56,32 @@ const fetchBills = () => {
     });
 };
 
+const pushToAdminUser = () => {
+  router.push("/users");
+};
+
+const pushToAdminRoom = () => {
+  router.push("/rooms");
+};
+
+const pushToAdminBills = () => {
+  router.push("/admin/bills");
+};
+
 fetchBillCount();
 fetchBills();
 </script>
 
 <template>
   <HelloUser />
+  <div class="button-container">
+    <button @click="pushToAdminRoom">Kamar</button>
+    <button @click="pushToAdminUser">User</button>
+  </div>
   <RentMainCard
     :totalBills="totalUnpaidBills"
-    message="Tagihan Belum Dibayar" />
+    message="Tagihan Belum Dibayar"
+    @click="pushToAdminBills" />
   <AdminRentCardList
     v-for="bill in bills.slice(0, 3)"
     :key="bill.id"
@@ -74,3 +91,21 @@ fetchBills();
     :roomCode="bill.roomCode"
     :id="bill.id" />
 </template>
+
+<style scoped>
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
+button {
+  background-color: #4894fe;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+</style>

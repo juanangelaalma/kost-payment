@@ -119,6 +119,21 @@ const router = createRouter({
         }
       },
     },
+    {
+      path: "/admin/bills",
+      name: "admin-bills",
+      component: () => import("../views/AdminBillsView.vue"),
+      beforeEnter: (to, from, next) => {
+        const isLogin = localStorage.getItem("role");
+        if (isLogin !== "admin") {
+          next("/");
+        } else if (!isLogin) {
+          next("/login");
+        } else {
+          next();
+        }
+      },
+    },
   ],
 });
 
