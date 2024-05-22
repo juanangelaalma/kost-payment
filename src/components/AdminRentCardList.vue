@@ -44,6 +44,9 @@ const bill = defineProps({
 }
 .button-status {
   width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 button {
   padding: 0.5rem 1rem;
@@ -67,7 +70,7 @@ button {
   font-weight: 600;
   background-color: #4894fe;
   text-align: center;
-  padding: 4px;
+  padding: 10px;
   border-radius: 10px;
 }
 </style>
