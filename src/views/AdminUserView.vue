@@ -15,7 +15,7 @@ const password = ref("");
 const startDate = new Date().toISOString().slice(0, 10);
 
 const handleShowModal = () => {
-  showModal.value = !showModal.value ;
+  showModal.value = !showModal.value;
   console.log(showModal.value);
 };
 
@@ -170,6 +170,11 @@ fetchUsers();
   border: none;
   cursor: pointer;
   border-radius: 10px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 20px;
 }
 form label {
   display: inline-block;
