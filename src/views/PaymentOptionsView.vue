@@ -80,7 +80,9 @@ const handleButton = () => {
       {{ option.name }}
     </label>
   </li>
-  <button :disabled="!buttonEnabled" @click="handleButton">Bayar</button>
+  <div class="btn-container">
+    <button :disabled="!buttonEnabled" @click="handleButton">Bayar</button>
+  </div>
 </template>
 
 <style scoped>
@@ -105,6 +107,12 @@ h2 {
 li {
   list-style-type: none;
 }
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
 button {
   padding: 1rem 1rem;
   border-radius: 5px;
@@ -112,7 +120,7 @@ button {
   color: white;
   border: none;
   margin: 2vh 3vh;
-  width: 90%;
+  width: 50%;
   position: fixed;
   bottom: 0;
 }

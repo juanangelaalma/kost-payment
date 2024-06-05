@@ -36,7 +36,8 @@ console.log(showModal.show);
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 30%;
+  min-width: 300px;
 }
 .button-container {
   display: flex;
